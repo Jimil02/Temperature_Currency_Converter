@@ -1,121 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
     <title>Currency Converter</title>
+
+    <!-- Sharer files: starts -->
+    <script id="sharer_iife_script" src="https://patelka2211.github.io/sharer/bundle/sharer.iife.min.js"
+        type="text/javascript"></script>
+    <script id="sharer_button_script" src="https://patelka2211.github.io/sharer/bundle/sharer_button.js"
+        type="text/javascript"></script>
+    <!-- Sharer files: ends -->
+
     <link rel="stylesheet" href="style.css">
     <style type="text/css">
-        body{  
-   margin: 0;  
-   padding: 0;  
-   min-height: 100vh;  
-   background: #333;  
-   display: flex;  
-   justify-content: center;  
-   align-items: center;    
-   font-family: cursive;
- }  
- .container{  
-   width: 1000px;  
-   position: relative;  
-   justify-content: space-between; 
-   display:  grid;
-   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-   grid-gap: 50px;
-   align-items: center;
-   justify-items: center;   
- }
- .container .main .form-group{  
-   width: 350px;  
-   /*height: 200px;*/ 
-   /*border-radius: 15px;*/ 
-   border-width: 10px;
-   position: relative;  
-   background: #333;  
-   display: flex;  
-   justify-content: center;  
-   align-items: center;  
-   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-   padding: 20px;
-   flex-wrap: wrap;  
- }
- .container .main .col-sm-6{  
-   width: 350px;  
-   /*height: 200px;*/ 
-   /*border-radius: 15px;*/ 
-   border-width: 10px;
-   position: relative;  
-   background: #333;  
-   display: flex;  
-   justify-content: center;  
-   align-items: center;  
-   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-   padding: 20px;
-   flex-wrap: wrap;  
- }
- .container .main .text-center{  
-   width: 350px;  
-   /*height: 200px;*/ 
-   /*border-radius: 15px;*/ 
-   border-width: 10px;
-   position: relative;  
-   background: #333;  
-   display: flex;  
-   justify-content: center;  
-   align-items: center;  
-   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-   padding: 20px;
-   flex-wrap: wrap;  
- }
- 
- .container .text-center{  
-   width: 350px;  
-   /*height: 200px;*/ 
-   /*border-radius: 15px;*/ 
-   border-width: 10px;
-   position: relative;  
-   background: #333;  
-   display: flex;  
-   justify-content: center;  
-   align-items: center;  
-   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-   padding: 20px;
-   flex-wrap: wrap;  
- }
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: cursive;
+        }
+
+        .container {
+            width: 1000px;
+            position: relative;
+            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-gap: 50px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .container .main .form-group {
+            width: 350px;
+            /*height: 200px;*/
+            /*border-radius: 15px;*/
+            border-width: 10px;
+            position: relative;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .container .main .col-sm-6 {
+            width: 350px;
+            /*height: 200px;*/
+            /*border-radius: 15px;*/
+            border-width: 10px;
+            position: relative;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .container .main .text-center {
+            width: 350px;
+            /*height: 200px;*/
+            /*border-radius: 15px;*/
+            border-width: 10px;
+            position: relative;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .container .text-center {
+            width: 350px;
+            /*height: 200px;*/
+            /*border-radius: 15px;*/
+            border-width: 10px;
+            position: relative;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            flex-wrap: wrap;
+        }
     </style>
 </head>
-  
+
 <body>
-  
+
     <!-- Currency Converter  -->
     <!-- <h1 class="heading text-center display-2">
         Currency Converter</h1> -->
 
     <div class="container">
-  
+
         <div class="main">
-  
+
             <div class="form-group">
                 <label for="oamount" style="color: white;">
-                    Amount to Convert : 
+                    Amount to Convert :
                 </label>
-                <input type="text" 
-                       class="form-control searchBox" 
-                       placeholder="0.00" 
-                       id="oamount" style="background-color: skyblue; font-family: cursive;">
+                <input type="text" class="form-control searchBox" placeholder="0.00" id="oamount"
+                    style="background-color: skyblue; font-family: cursive;">
             </div>
-  
+
             <div class="row">
                 <div class="col-sm-6">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" style="color: white; ">From</span>
                         </div>
-                        <select class="form-control from" id="sel1" style="background-color: skyblue; font-family: cursive; font-size: 20px;">
+                        <select class="form-control from" id="sel1"
+                            style="background-color: skyblue; font-family: cursive; font-size: 20px;">
                             <option value="">Select One …</option>
                             <option value="USD">USD</option>
                             <option value="AED">AED</option>
@@ -172,13 +183,14 @@
                         </select>
                     </div>
                 </div>
-  
+
                 <div class="col-sm-6">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" style="color: white;">To</span>
                         </div>
-                        <select class="form-control to" id="sel2" style="background-color: skyblue; font-family: cursive; font-size: 20px;">
+                        <select class="form-control to" id="sel2"
+                            style="background-color: skyblue; font-family: cursive; font-size: 20px;">
                             <option value="">Select One …</option>
                             <option value="USD">USD</option>
                             <option value="AED">AED</option>
@@ -236,37 +248,36 @@
                     </div>
                 </div>
             </div>
-  
+
             <div class="text-center">
-  
+
                 <!-- convert button -->
-                <button class="btn btn-primary convert m-2" 
-                        type="submit" style="background-color: skyblue; font-family: cursive; font-size: 25px;">
-                     Convert
-              </button>
-  
+                <button class="btn btn-primary convert m-2" type="submit"
+                    style="background-color: skyblue; font-family: cursive; font-size: 25px;">
+                    Convert
+                </button>
+
                 <!-- reset button -->
-                <button class="btn btn-primary m-2" 
-                        onclick="clearVal()" style="background-color: skyblue; font-family: cursive; font-size: 17px;">
-                   Reset
-              </button>
+                <button class="btn btn-primary m-2" onclick="clearVal()"
+                    style="background-color: skyblue; font-family: cursive; font-size: 17px;">
+                    Reset
+                </button>
             </div>
-  
+
         </div>
-  
+
         <div id="finalAmount" class="text-center">
-  
+
             <!-- Display the converted amount -->
             <h2 style="color: white;">Converted Amount :
-                <span class="finalValue" 
-                      style="color:green;">
-           </span>
+                <span class="finalValue" style="color:green;">
+                </span>
             </h2>
         </div>
     </div>
-  
+
     <!-- linking script.js file -->
     <script src="CurrencyConverter.js"></script>
 </body>
-  
+
 </html>
