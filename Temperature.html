@@ -1,84 +1,72 @@
-<!-- <html>
-<head>
-  <title>Temperature Converter in AngularJS</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-</head>
-<style>
-body {
-  font-family: arial;
-  font-size: 25px;
-  font-weight: bold;
-}
-</style>
-<body >
-    <div ng-app ng-init="f=32;c=0">
-		
-    <b>Temperature Converter in AngularJS</b><br>
-    <div><br>
-      Fahrenheit to Celsius: <input type="number" ng-model="f"> {{((f-32) * 5 / 9) | number : 2}} &deg;c
-    </div>
-		<br>
-    <div>
-      Celsius to Fahrenheit: <input type="number" ng-model="c"> {{c * 9 / 5 + 32 | number : 2}} &deg;f
-    </div>
-</div>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Temperature Converter</title>
-	<style type="text/css">
-		body{  
-   margin: 0;  
-   padding: 0;  
-   min-height: 100vh;  
-   background: #333;  
-   display: flex;  
-   justify-content: center;  
-   align-items: center;    
- }  
- .container{  
-   width: 1000px;  
-   position: relative;  
-   justify-content: space-between; 
-   display:  grid;
-   grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-   grid-gap: 50px;
-   align-items: center;
-   justify-items: center;   
- }
- .container .card{  
-   position: relative;  
-   cursor: pointer;  
- }
- .container .card .cf{  
-   width: 300px;  
-   /*height: 200px;*/ 
-   /*border-radius: 15px;*/ 
-   border-width: 10px;
-   position: relative;  
-   background: #333;  
-   display: flex;  
-   justify-content: center;  
-   align-items: center;  
-   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-   padding: 20px;
-   flex-wrap: wrap;  
- } 
- label {
-    color: aliceblue;
-    font-weight: bold;
-    font-family: cursive;
-}
-input{
-  font-family: cursive;
-  font-weight: bold;
-}
- /*.container .cf{  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temperature Converter</title>
+
+  <!-- Sharer files: starts -->
+  <script id="sharer_iife_script" src="https://patelka2211.github.io/sharer/bundle/sharer.iife.min.js"
+    type="text/javascript"></script>
+  <script id="sharer_button_script" src="https://patelka2211.github.io/sharer/bundle/sharer_button.js"
+    type="text/javascript"></script>
+  <!-- Sharer files: ends -->
+
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 1000px;
+      position: relative;
+      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+      grid-gap: 50px;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .container .card {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .container .card .cf {
+      width: 300px;
+      /*height: 200px;*/
+      /*border-radius: 15px;*/
+      border-width: 10px;
+      position: relative;
+      background: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    label {
+      color: aliceblue;
+      font-weight: bold;
+      font-family: cursive;
+    }
+
+    input {
+      font-family: cursive;
+      font-weight: bold;
+    }
+
+    /*.container .cf{  
    position: relative;  
    background: white;  
    display: flex;  
@@ -86,37 +74,39 @@ input{
    align-items: center;  
    z-index: 1;
  }*/
-	</style>
-	
+  </style>
+
 </head>
 <!-- <div class="home">
       <a href="#"><img src="home.png" width="30px" height="30px" style="float: left;"></a>
     </div> -->
+
 <body>
 
-<div class="container">
-  <div class="card">
-	<div class="cf">
-		<label for="celsius">CELSIUS (&deg;C)</label>
-		<br>
-		<input type="number" id="celsius" style="font-size: 17px; background-color: orange;" />
-	</div>
-</div>
-<div class="card">
-	<div class="cf">
-		<label for="fahrenheit">FAHRENHEIT (&deg;F)</label>
-		<br>
-		<input type="number" id="fahrenheit" style="font-size: 17px; background-color: orange;" />
-	</div>
+  <div class="container">
+    <div class="card">
+      <div class="cf">
+        <label for="celsius">CELSIUS (&deg;C)</label>
+        <br>
+        <input type="number" id="celsius" style="font-size: 17px; background-color: orange;" />
+      </div>
+    </div>
+    <div class="card">
+      <div class="cf">
+        <label for="fahrenheit">FAHRENHEIT (&deg;F)</label>
+        <br>
+        <input type="number" id="fahrenheit" style="font-size: 17px; background-color: orange;" />
+      </div>
+    </div>
+    <div class="card">
+      <div class="cf">
+        <label for="kelvin">KELVIN (K)</label>
+        <br>
+        <input type="number" id="kelvin" style="font-size: 17px; background-color: orange;" />
+      </div>
+    </div>
   </div>
-  <div class="card">
-	<div class="cf">
-		<label for="kelvin">KELVIN (K)</label>
-		<br>
-		<input type="number" id="kelvin" style="font-size: 17px; background-color: orange;" />
-	</div>
-</div>
-</div>
-<script src="temperature.js"></script>
+  <script src="temperature.js"></script>
 </body>
+
 </html>
